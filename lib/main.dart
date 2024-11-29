@@ -23,13 +23,13 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('my first app '), actions: [
-        Icons(Icons.message),
-      ],),
-      body: Center(
+      appBar: AppBar(title: const Text('my first app '),),
+      body: const Center(
         child: Text('Hello world'),
       ),
     );
