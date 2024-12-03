@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,15 +8,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
 
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
       home:  MyHomePage(),
     );
@@ -28,7 +27,16 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('my first app '),),
+      appBar: AppBar(title: const Text('my first app '), actions:const [
+        Icon(CupertinoIcons.chat_bubble),
+        SizedBox(width: 10,),
+        Padding(
+        padding: const EdgeInsets.fromLTRB(8, 0, 16, 0),
+        child: Icon(CupertinoIcons.ellipsis_vertical),
+        )
+
+
+      ],),
       body: const Center(
         child: Text('Hello world'),
       ),
